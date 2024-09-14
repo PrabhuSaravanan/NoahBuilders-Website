@@ -5617,7 +5617,7 @@ ol.commentlist li::after {
 40. About us
 =========================*/
 .m-about{position:relative;	z-index:2;}
-.m-about:after{content: "";	position: absolute;	width: 100%;	height: 100%;	border: 10px solid #000;	left: -50px;	bottom: -50px;	z-index: -1;}
+.m-about:after{content: "";	position: absolute;	width: 100%;	height: 100%;	border: 5px solid #000;	left: -50px;	bottom: -50px;	z-index: -1;}
 .about-us-carousel.owl-carousel .owl-nav{	margin-top: 0px;	position: absolute;	right: -15px;	bottom: 15px;}
 .about-us-carousel.owl-carousel .owl-nav .owl-prev, 
 .about-us-carousel.owl-carousel .owl-nav .owl-next{display:block;	margin:0px;}
