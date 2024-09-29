@@ -785,30 +785,47 @@ All JavaScript fuctions Start
 ===========================*/
 
 	// > Contact form function by = custom.js	
-	jQuery(document).on('submit', 'form.cons-contact-form', function(e){
-		e.preventDefault();
-		var form = jQuery(this);
-		/* sending message */
-		jQuery.ajax({
-			url: 'http://thememajestic.com/modern/phpmailer/mail.php',
-			data: form.serialize() + "&action=contactform",
-			type: 'POST',
-			dataType: 'JSON',
-			beforeSend: function() {
-				jQuery('.loading-area').show();
-			},
+	// jQuery(document).on('submit', 'form.cons-contact-form', function(e){
+	// 	e.preventDefault();
+	// 	var form = jQuery(this);
+	// 	/* sending message */
+	// 	jQuery.ajax({
+	// 		url: 'http://thememajestic.com/modern/phpmailer/mail.php',
+	// 		data: form.serialize() + "&action=contactform",
+	// 		type: 'POST',
+	// 		dataType: 'JSON',
+	// 		beforeSend: function() {
+	// 			jQuery('.loading-area').show();
+	// 		},
 
-			success:function(data){
-				jQuery('.loading-area').hide();
-				if(data['success']){
-				jQuery("<div class='alert alert-success'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');
-				}else{
-				jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');	
-				}
-			}
-		});
-		return false;
-	});	
+	// 		success:function(data){
+	// 			jQuery('.loading-area').hide();
+	// 			if(data['success']){
+	// 			jQuery("<div class='alert alert-success'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');
+	// 			}else{
+	// 			jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');	
+	// 			}
+	// 		}
+	// 	});
+	// 	return false;
+	// });	
+
+	// Contact form submission handler
+jQuery(document).on('submit', 'form.cons-contact-form', function(e) {
+    e.preventDefault();
+    
+    // Remove any existing alert messages
+    jQuery('.alert').remove();
+    
+    // Create and insert the custom message
+    var messageHtml = "<div class='alert alert-info' style='margin-top: 15px; padding: 10px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px;'>Unable to send Message, Please Contact Noah Builders @ +91-9442136964</div>";
+    jQuery(this).before(messageHtml);
+    
+    // Hide the loading area if it's visible
+    jQuery('.loading-area').hide();
+    
+    return false;
+});
 
 /*===========================
 	Document on  Submit FUNCTION END

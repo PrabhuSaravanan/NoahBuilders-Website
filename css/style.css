@@ -714,7 +714,7 @@ h6 {  font-family: 'Poppins', sans-serif;  font-weight: 500;	  font-size: 14px; 
 3. TEXT & PARAGRAPH 
 ======================================*/
 
-p {  line-height:24px;  margin-bottom:24px;}
+p {  line-height:24px;  margin-bottom:24px; text-align: justify;}
 strong { 	font-weight:600;}
 
 /*-------------------------------------
